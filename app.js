@@ -2,7 +2,7 @@
  * api/app.js
  * exports an express app started.
  */
-
+process.env.JWT_KEY = "thisIsMyJwtKeyUsedToEncodeTheTokens";
 const express = require("express");
 const app = express();
 const routes = require("./routes");
