@@ -5,6 +5,7 @@
 
 const express = require("express");
 const app = express();
+const routes = require("./routes");
 
 const bodyParser = require("body-parser");
 
@@ -13,6 +14,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 //middleware to parse requests of content-type - application/json
 app.use(bodyParser.json());
 
+app.use(routes);
 //endpoints
 app.get("/", (req, res) => {
   res.send({ message: "Yabadabadooo" });
