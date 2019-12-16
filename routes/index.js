@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const jwt = require("jsonwebtoken");
+const checkAuth = require("../middleware/check-auth");
 
 router.post("/register", (req, res, next) => {
   let hasErrors = false;
@@ -82,6 +83,16 @@ router.post("/login", (req, res, next) => {
       });
     }
   }
+});
+
+router.get("/protected", checkAuth, (req, res, next) => {
+  res.status(200).json({
+    message: `Welcome, your email is ${req.userData.email}`,
+    user: {
+      email: req.userData.email
+    },
+    errors: []
+  });
 });
 
 module.exports = router;
