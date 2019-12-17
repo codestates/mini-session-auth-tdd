@@ -2,7 +2,10 @@
  * api/app.js
  * exports an express app started.
  */
+
+// this is supposed to be located in separte file and git ignored
 process.env.JWT_KEY = "thisIsMyJwtKeyUsedToEncodeTheTokens";
+
 const express = require("express");
 const app = express();
 const routes = require("./routes");
