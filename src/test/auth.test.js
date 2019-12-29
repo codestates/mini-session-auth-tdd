@@ -26,7 +26,7 @@ describe("User registration", () => {
       .then(res => {
         //console.log(res.body);
         //assertions
-        expect(res).to.have.status(201);
+        expect(res).to.have.status(301);
         expect(res.body.message).to.be.equal("User created!");
         expect(res.body.errors.length).to.be.equal(0);
         done();
