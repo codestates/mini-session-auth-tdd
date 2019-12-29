@@ -7,7 +7,7 @@ const request = require("supertest");
 const app = require("../app");
 
 describe("User login", () => {
-  it("should return 200 and token for valid credentials", async () => {
+  it("should return 200 and token for valid credentials", async done => {
     //mock invalid user input
     const valid_input = {
       email: "john@wick.com",
@@ -23,6 +23,7 @@ describe("User login", () => {
       expect(res.body.token).toBeDefined();
       expect(res.body.message).toEqual("Auth OK");
       expect(res.body.errors.length).toEqual(0);
+      done();
     } catch (err) {
       console.log(err.message);
     }

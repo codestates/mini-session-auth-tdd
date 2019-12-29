@@ -5,5 +5,6 @@ describe("end of the test", () => {
 });
 
 afterAll(() => {
-  return process.exit(1);
+  console.log("here", process);
+  return process.exit(0);
 });
