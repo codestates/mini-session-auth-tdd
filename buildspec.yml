@@ -22,8 +22,6 @@ artifacts:
   files:
     - package.json
     - package-lock.json
-    - app.js
-    - "routes/**/*"
-    - "middleware/**/*"
+    - "src/**/*"
     - README.md
   name: yourBuildName-$(date +%Y-%m-%d)

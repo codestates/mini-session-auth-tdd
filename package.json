@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha",
-    "start": "node ./bin/www"
+    "start": "node ./src/bin/www"
   },
   "keywords": [],
   "author": "",
