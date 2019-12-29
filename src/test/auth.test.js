@@ -42,12 +42,10 @@ describe("Protected route", () => {
       const res = await request(app)
         .post("/login")
         .send(valid_input);
-      console.log("res", res);
       const token = res.body.token;
       const protected_response = await request(app)
         .get("/protected")
         .set("Authorization", token);
-      console.log("protected_res", protected_response);
       expect(protected_response.statusCode).toEqual(300);
       expect(protected_response.body.message).toEqual(
         "Welcome, your email is john@wick.com"
@@ -56,7 +54,7 @@ describe("Protected route", () => {
       expect(protected_response.body.errors.length).toEqual(0);
       done();
     } catch (err) {
-      console.log(err.message);
+      console.log("@@@@@@@@", err.message);
     }
   });
 });
