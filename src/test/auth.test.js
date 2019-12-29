@@ -20,7 +20,7 @@ describe("User registration", () => {
         .post("/register")
         .send(new_user);
 
-      expect(res.statusCode).toEqual(301);
+      expect(res.statusCode).toEqual(201);
       expect(res.body.message).toEqual("User created!");
       expect(res.body.errors.length).toEqual(0);
     } catch (err) {
