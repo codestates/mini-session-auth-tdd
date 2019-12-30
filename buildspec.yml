@@ -24,10 +24,3 @@ phases:
 cache:
   paths:
     - 'node_modules/**/*'
-artifacts:
-  files:
-    - package.json
-    - package-lock.json
-    - 'src/**/*'
-    - README.md
-  name: yourBuildName-$(date +%Y-%m-%d)
