@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "node_modules/.bin/jest --forceExit",
+    "test": "./node_modules/.bin/jest --forceExit",
     "start": "node ./src/bin/www"
   },
   "keywords": [],
