@@ -9,7 +9,6 @@ phases:
       - echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
       # Do it!
       - apt-get update -y
-      - apt-get install -y chromium-browser
       - apt-get install -y yarn
     pre_build:
       commands:
@@ -24,11 +23,11 @@ phases:
       - echo Build completed on `date`
 cache:
   paths:
-    - "node_modules/**/*"
+    - 'node_modules/**/*'
 artifacts:
   files:
     - package.json
     - package-lock.json
-    - "src/**/*"
+    - 'src/**/*'
     - README.md
   name: yourBuildName-$(date +%Y-%m-%d)
